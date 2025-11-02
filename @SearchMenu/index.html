@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #mySearch {
+        padding: 12px;
+        width: 100%;
+        border: 5px solid black;
+        font-size: 16px;
+    }
+
+    #myMenu{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #myMenu a {
+        text-decoration: none;
+        color: black;
+        padding: 12px;
+        display: block;
+    }
+
+    #myMenu a:hover {
+        background-color: aquamarine;
+    }
+
+
+</style>
+<body>
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search..." title="Type in a category">
+
+    <ul id="myMenu">
+        <li><a href="#">one piece</a></li>
+        <li><a href="#">naruto</a></li>
+        <li><a href="#">dragon ball</a></li>
+        <li><a href="#">Attack on titans</a></li>
+        <li><a href="#">demon slayer</a></li>
+        <li><a href="#">bleach</a></li>
+        <li><a href="#">jjk</a></li>
+        <li><a href="#">your name</a></li>
+        <li><a href="#">Death note</a></li>
+        <li><a href="#">Spy x family</a></li>
+        <li><a href="#">black clover</a></li>
+        <li><a href="#">tokyo Revengers</a></li>
+        <li><a href="#">classroom of elite</a></li>
+    </ul>
+
+    
+</body>
+
+<script>
+        function myFunction() {
+            var input, filter, ul, li, a,i;
+            input = document.getElementById("mySearch");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myMenu");
+            li = ul.getElementsByTagName("li");
+
+            for(i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if(a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                }
+                else {
+                    li[i].style.display = "none"
+                }
+            }
+        }
+    </script>
+</html>
